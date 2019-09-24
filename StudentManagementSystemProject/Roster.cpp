@@ -58,9 +58,51 @@ Roster::Roster() {
 	}
 }
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degreeProgram) {
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, string degreeProgram) {
 	int numOfdaysArray[] = { daysInCourse1, daysInCourse2, daysInCourse3 };
-	Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degreeProgram);
+	Degree degree;
+	if (degreeProgram == "SECURITY")
+	{
+		degree = SECURITY;
+	}
+	else if (degreeProgram == "NETWORKING")
+	{
+		degree = NETWORKING;
+	}
+	else {
+		degree = SOFTWARE;
+	}
+	Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degree);
+}
+
+void Roster::remove(string studentID) {
+	bool found = false;
+
+	for (unsigned i = 0; i < classRosterArray.size(); i++) {
+		if (studentID == classRosterArray[i].getID()) {
+			classRosterArray.erase(classRosterArray.begin() + i);
+			cout << "Removing Student  with ID: " << classRosterArray[i].getID() << endl;
+			found = true;
+			break;
+		}
+	}
+	if (!found) { cout << "Student not found!" << endl; }
+}
+
+void Roster::printDaysInCourse(string studentID) {
+	bool found = false;
+
+	for (unsigned i = 0; i < classRosterArray.size(); i++) {
+		if (studentID == classRosterArray[i].getID()) {
+			for (unsigned j = 0; j < 3; j++) {
+				cout << "Class " << j + 1 << " has " << classRosterArray[i].getNumOfDaysToCompleteCourse()[j] << " days left."<< endl;
+			}
+			cout << "" << endl;
+			found = true;
+			break;
+		}
+	}
+	if (!found) { cout << "Student not found!" << endl; }
 }
 
 void Roster::printAll() {
@@ -74,7 +116,16 @@ void Roster::printAll() {
 int main() {
 	Roster classRoster = Roster();
 	classRoster.printAll();
+	cout << "-----------------------------------------------" << endl;
+	classRoster.remove("A3");
+	classRoster.printAll();
 
+	cout << "-----------------------------------------------" << endl;
+	classRoster.remove("A6");
+	classRoster.printAll();
+
+	cout << "-----------------------------------------------" << endl;
+	classRoster.printDaysInCourse("A2");
 	
 	
 	return 0;
