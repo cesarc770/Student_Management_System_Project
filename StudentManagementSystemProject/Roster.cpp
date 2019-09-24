@@ -6,7 +6,7 @@ const string studentData[] =
 "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
 "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
 "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-"A5,Cesar,Caceres Figueroa,cesarc770@gmail.com,29,20,48,33,SOFTWARE" };
+"A5,Cesar,Caceres,cesarc770@gmail.com,29,20,48,33,SOFTWARE" };
 
 vector<string> split(const string& str, const string& delim)
 {
@@ -38,7 +38,7 @@ Roster::Roster() {
 		int numOfdaysArray[] = { num1,num2,num3 };
 		Student newStudent(id, fname, lname, email, age, numOfdaysArray, SOFTWARE);
 
-		newStudent.print();
+		classRosterArray.push_back(newStudent);
 
 	}
 }
@@ -49,18 +49,17 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 }
 
 void Roster::printAll() {
-	Student student1 = *classRosterArray[0];
-	Student student2 = *classRosterArray[1];
-
-	student1.print();
-	student2.print();
+	for (unsigned i = 0; i < classRosterArray.size(); i++)
+	{
+		classRosterArray[i].print();
+	}
 }
 
 
 int main() {
 	Roster classRoster = Roster();
 	classRoster.printAll();
-
+	
 	return 0;
 }
 

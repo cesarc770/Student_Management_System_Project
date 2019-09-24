@@ -1,10 +1,11 @@
 #pragma once
 #include "Student.h"
+#include <vector>
 
 
 class Roster {
 private:
-	Student * classRosterArray[5]; //todo you want to make size dynamic (in variable)
+	vector<Student> classRosterArray; 
 
 public:
 	Roster();

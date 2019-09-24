@@ -33,7 +33,7 @@ void Student::setLastName(string lastName) { this->lastName = lastName; };
 void Student::setEmail(string email) { this->email = email; };
 void Student::setAge(int age) { this->age = age; };
 void Student::setNumOfDaysToCompleteCourse(int *numOfDays, int courses) {
-	//for (unsigned i = 0; i < courses; i++) {
-	//  this -> numOfDaysToCompleteCourse[i] = numOfDays[i];
-	//  }
+	for (unsigned i = 0; i < courses; i++) {
+		this -> numOfDaysToCompleteCourse[i] = numOfDays[i];
+	}
 };
