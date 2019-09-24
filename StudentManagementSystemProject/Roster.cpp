@@ -36,7 +36,22 @@ Roster::Roster() {
 		int num2 = stoi(studentParsedData.at(6));
 		int num3 = stoi(studentParsedData.at(7));
 		int numOfdaysArray[] = { num1,num2,num3 };
-		Student newStudent(id, fname, lname, email, age, numOfdaysArray, SOFTWARE);
+		string degree_holder = studentParsedData.at(8);
+		//converting string to Degree type
+		Degree degree;
+		if(degree_holder == "SECURITY")
+		{
+			degree = SECURITY;
+		} 
+		else if (degree_holder == "NETWORKING")
+		{
+			degree = NETWORKING;
+		}
+		else {
+			degree = SOFTWARE;
+		}
+		
+		Student newStudent(id, fname, lname, email, age, numOfdaysArray, degree);
 
 		classRosterArray.push_back(newStudent);
 
@@ -59,6 +74,8 @@ void Roster::printAll() {
 int main() {
 	Roster classRoster = Roster();
 	classRoster.printAll();
+
+	
 	
 	return 0;
 }
