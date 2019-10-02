@@ -13,20 +13,16 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 	setNumOfDaysToCompleteCourse(NumOfDaysToCompleteCourse);
 };
 Student::~Student() {}
+
+//Getters for Student
 string Student::getID() { return  this->studentID; };
 string Student::getFirstName() { return this->firstName; };
 string Student::getLastName() { return this->lastName; };
 string Student::getEmail() { return this->email; };
 int Student::getAge() { return this->age; };
 int * Student::getNumOfDaysToCompleteCourse() { return numOfDaysToCompleteCourse; };
-void Student::print() {
-	cout << "First Name: " << this->firstName << "\t"
-		<< "Last Name: " << this->lastName << "\t"
-		<< "Age: " << this->age << "\t"
-		<< "daysInCourse: {" << this->numOfDaysToCompleteCourse[0] << ", " << this->numOfDaysToCompleteCourse[1] << ", " << this->numOfDaysToCompleteCourse[2] << "} "
-		<< "Degree Program: " << this->degreeType << endl;
-}
 
+//Setters for Student
 void Student::setID(int id) { this->studentID = id; };
 void Student::setFirstName(string firstName) { this->firstName = firstName; };
 void Student::setLastName(string lastName) { this->lastName = lastName; };
@@ -37,3 +33,12 @@ void Student::setNumOfDaysToCompleteCourse(int *numOfDays, int courses) {
 		this -> numOfDaysToCompleteCourse[i] = numOfDays[i];
 	}
 };
+
+//prints each student in a row format
+void Student::print() {
+	cout << "First Name: " << this->firstName << "\t"
+		<< "Last Name: " << this->lastName << "\t"
+		<< "Age: " << this->age << "\t"
+		<< "daysInCourse: {" << this->numOfDaysToCompleteCourse[0] << ", " << this->numOfDaysToCompleteCourse[1] << ", " << this->numOfDaysToCompleteCourse[2] << "} "
+		<< "Degree Program: " << this->degreeType << endl;
+}
