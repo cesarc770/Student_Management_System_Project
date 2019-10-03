@@ -20,8 +20,6 @@ Roster classRoster = Roster(studentData);
 
 int main() {
 	char user_command;
-
-
 	do {
 		PrintMenu();
 		cout << "\nEnter menu option number or 'q' to quit program: ";
@@ -46,9 +44,7 @@ int main() {
 			cout << "Invalid input";
 		}
 
-
 	} while (user_command != 'q');
-
 
 	return 0;
 }
@@ -75,7 +71,7 @@ void AddStudentToRosterMenu()
 	string degree;
 	char choice;
 
-	cout << "ADD Student" << endl;
+	cout << "\nADD STUDENT" << endl;
 	cout << "-------------------------" << endl;
 	
 	studentId = "A" + (classRoster.getSize() + 1);
@@ -93,7 +89,9 @@ void AddStudentToRosterMenu()
 		cin >> daysLeftInCourse[i];
 	}
 	cout << "Enter Degree option: " << endl;
-	cout << "1- SECURITY\n 2- NETWORKING\n 3- SOFTWARE" << endl;
+	cout << "1- SECURITY\n"
+		<< "2 - NETWORKING\n"
+		<< "3 - SOFTWARE" << endl;
 	cin >> choice;
 	switch (choice)
 	{
@@ -120,7 +118,7 @@ void RemoveMenu()
 {
 	string studentID;
 
-	cout << "REMOVE STUDENT" << endl;
+	cout << "\nREMOVE STUDENT" << endl;
 	cout << "-------------------------" << endl;
 	cout << "Enter Student ID you wish to remove from Roster: ";
 	cin >> studentID;
@@ -132,9 +130,9 @@ void DaysLeftInClassesMenu()
 {
 	string studentID;
 
-	cout << "DAYS LEFT IN CLASSES" << endl;
+	cout << "\nDAYS LEFT IN CLASSES" << endl;
 	cout << "-------------------------" << endl;
-	cout << "Enter Student ID you wish to see the days left for their classes: ";
+	cout << "Enter Student ID to see days left in their classes: ";
 	cin >> studentID;
 
 	classRoster.printDaysInCourse(studentID);
