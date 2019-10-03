@@ -15,6 +15,6 @@ public:
 	void printAll();
 	void printDaysInCourse(string studentID);
 	void printInvalidEmails();
-	int getSize() { return size; }
+	int getSize() { return static_cast<int>(classRosterArray.size()); }
 
 };

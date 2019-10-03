@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 class Student {
@@ -16,7 +17,6 @@ private:
 	Degree degreeType;
 
 public:
-	// Student (int studentID, string firstName);
 	Student(string studentID, string firstName, string lastName, string email, int age, int NumOfDaysToCompleteCourse[3], Degree degreeType);
 	~Student();
 	string getID();

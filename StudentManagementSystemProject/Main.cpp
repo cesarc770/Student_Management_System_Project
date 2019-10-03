@@ -14,6 +14,7 @@ void PrintMenu();
 void AddStudentToRosterMenu();
 void RemoveMenu();
 void DaysLeftInClassesMenu();
+void InvalidEmailsMenu();
 
 //Instantiating Roster 
 Roster classRoster = Roster(studentData);
@@ -36,6 +37,9 @@ int main() {
 			RemoveMenu();
 			break;
 		case '4':
+			InvalidEmailsMenu();
+			break;
+		case '5':
 			DaysLeftInClassesMenu();
 			break;
 		case 'q':
@@ -57,7 +61,8 @@ void PrintMenu()
 	cout << "1 - Print Student Roster\n"
 		 << "2 - Add Student to Roster\n"
 		 << "3 - Remove Student by ID\n"
-		 << "4 - Print days left in course for Student by ID" << endl;
+		 << "4 - Print Invalid Emails\n"
+		 << "5 - Print days left in course for Student by ID" << endl;
 }
 
 void AddStudentToRosterMenu()
@@ -74,7 +79,7 @@ void AddStudentToRosterMenu()
 	cout << "\nADD STUDENT" << endl;
 	cout << "-------------------------" << endl;
 	
-	studentId = "A" + (classRoster.getSize() + 1);
+	studentId = "A" + to_string(classRoster.getSize() + 1);
 	cout << "Enter Student First Name: ";
 	cin >> fname;
 	cout << "Enter Student Last Name: ";
@@ -111,7 +116,7 @@ void AddStudentToRosterMenu()
 	}
 
 	classRoster.add(studentId, fname, lname, email, stoi(age), stoi(daysLeftInCourse[0]), stoi(daysLeftInCourse[1]), stoi(daysLeftInCourse[2]), degree);
-	cout << "New Student Added to Roster" << endl;
+	cout << "New Student ID " << studentId << " Added to Roster" << endl;
 }
 
 void RemoveMenu()
@@ -136,5 +141,12 @@ void DaysLeftInClassesMenu()
 	cin >> studentID;
 
 	classRoster.printDaysInCourse(studentID);
+}
+
+void InvalidEmailsMenu()
+{
+	cout << "\nINVALID EMAILS" << endl;
+	cout << "-------------------------" << endl;
+	classRoster.printInvalidEmails();
 }
 

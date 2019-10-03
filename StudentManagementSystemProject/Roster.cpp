@@ -1,4 +1,5 @@
 #include "Roster.h"
+#include <regex>
 using namespace std;
 
 vector<string> split(const string& str, const string& delim)
@@ -32,7 +33,6 @@ Roster::Roster(string studentData[]) {
 
 		add(id, fname, lname, email, age, num1, num2, num3, degree);
 	}
-	size = 0;
 }
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, string degreeProgram) {
@@ -52,7 +52,6 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degree);
 
 	classRosterArray.push_back(newStudent);
-	size += 1;
 }
 
 void Roster::remove(string studentID) {
@@ -86,11 +85,46 @@ void Roster::printDaysInCourse(string studentID) {
 }
 
 void Roster::printAll() {
+	cout << "\nPRINT CLASS ROSTER" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------" << endl;
+	cout << setw(11) << "StudentID"
+		<< setw(14) << "First Name"
+		<< setw(14) << "Last Name"
+		<< setw(25) << "Email"
+		<< setw(6) << "Age"
+		<< setw(9) << "Class #1" << setw(9) << "Class #2" << setw(9) << "Class #3"
+		<< setw(12) << "Degree" << endl;
+	cout << "-----------------------------------------------------------------------------------------------------------------" << endl;
 	for (unsigned i = 0; i < classRosterArray.size(); i++)
 	{
 		classRosterArray[i].print();
 	}
 }
+
+void Roster::printInvalidEmails()
+{
+	const regex pattern
+	("(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+	
+	cout << "Students with invalid emails: " << endl;
+	cout << setw(11) << "StudentID"
+		<< setw(14) << "First Name"
+		<< setw(14) << "Last Name"
+		<< setw(25) << "Email" << endl;
+
+	for (int i = 0; i < classRosterArray.size(); i++)
+	{
+		if (!regex_match(classRosterArray[i].getEmail(), pattern))
+		{
+			cout << setw(11) << classRosterArray[i].getID()
+				<< setw(14) << classRosterArray[i].getFirstName()
+				<< setw(14) << classRosterArray[i].getLastName()
+				<< setw(25) << classRosterArray[i].getEmail()
+				<< endl;
+		}
+	}
+}
+
 
 
 

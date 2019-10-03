@@ -29,16 +29,18 @@ void Student::setLastName(string lastName) { this->lastName = lastName; };
 void Student::setEmail(string email) { this->email = email; };
 void Student::setAge(int age) { this->age = age; };
 void Student::setNumOfDaysToCompleteCourse(int *numOfDays, int courses) {
-	for (unsigned i = 0; i < courses; i++) {
+	for (int i = 0; i < courses; i++) {
 		this -> numOfDaysToCompleteCourse[i] = numOfDays[i];
 	}
 };
 
 //prints each student in a row format
 void Student::print() {
-	cout << "First Name: " << this->firstName << "\t"
-		<< "Last Name: " << this->lastName << "\t"
-		<< "Age: " << this->age << "\t"
-		<< "daysInCourse: {" << this->numOfDaysToCompleteCourse[0] << ", " << this->numOfDaysToCompleteCourse[1] << ", " << this->numOfDaysToCompleteCourse[2] << "} "
-		<< "Degree Program: " << this->degreeType << endl;
+	cout << setw(11) << this->studentID 
+		<< setw(14) << this->firstName 
+		<< setw(14) << this->lastName 
+		<< setw(25) << this->email
+		<< setw(6) << this->age
+		<< setw(9)<< this->numOfDaysToCompleteCourse[0] << setw(9) << this->numOfDaysToCompleteCourse[1] << setw(9) << this->numOfDaysToCompleteCourse[2]
+		<< setw(12) << this->degreeType << endl;
 }
