@@ -20,13 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Degree.h" />
+    <ClInclude Include="NetworkStudent.h" />
+    <ClInclude Include="SecurityStudent.h" />
     <ClInclude Include="SoftwareStudent.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Roster.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="NetworkStudent.cpp" />
     <ClCompile Include="Roster.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SecurityStudent.cpp" />
     <ClCompile Include="SoftwareStudent.cpp" />
     <ClCompile Include="Student.cpp" />
   </ItemGroup>

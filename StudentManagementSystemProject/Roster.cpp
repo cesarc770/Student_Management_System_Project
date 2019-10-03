@@ -37,21 +37,17 @@ Roster::Roster(string studentData[]) {
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, string degreeProgram) {
 	int numOfdaysArray[] = { daysInCourse1, daysInCourse2, daysInCourse3 };
-	Degree degree;
 	if (degreeProgram == "SECURITY")
 	{	
-		degree = SECURITY;
+		classRosterArray.push_back(SecurityStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray));
 	}
 	else if (degreeProgram == "NETWORKING")
 	{
-		degree = NETWORKING;
+		classRosterArray.push_back(NetworkStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray));
 	}
 	else {
-		SoftwareStudent newSS = SoftwareStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray);
-		classRosterArray.push_back(newSS);
+		classRosterArray.push_back(SoftwareStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray));
 	}
-	//Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degree);
-
 	
 }
 

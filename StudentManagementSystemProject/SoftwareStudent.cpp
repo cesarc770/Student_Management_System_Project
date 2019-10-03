@@ -18,6 +18,5 @@ SoftwareStudent::~SoftwareStudent()
 
 int SoftwareStudent::getDegreeProgram()
 {
-	//return this->degreeType;
-	return 0;
+	return this->degreeType;
 }

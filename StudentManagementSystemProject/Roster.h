@@ -1,6 +1,7 @@
 #pragma once
-#include "Student.h"
 #include "SoftwareStudent.h"
+#include "SecurityStudent.h"
+#include "NetworkStudent.h"
 #include <vector>
 
 

@@ -27,6 +27,12 @@
     <ClInclude Include="SoftwareStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SecurityStudent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkStudent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Roster.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SoftwareStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SecurityStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
