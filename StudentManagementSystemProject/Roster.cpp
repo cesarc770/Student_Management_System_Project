@@ -39,7 +39,7 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	int numOfdaysArray[] = { daysInCourse1, daysInCourse2, daysInCourse3 };
 	Degree degree;
 	if (degreeProgram == "SECURITY")
-	{
+	{	
 		degree = SECURITY;
 	}
 	else if (degreeProgram == "NETWORKING")
@@ -47,11 +47,12 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 		degree = NETWORKING;
 	}
 	else {
-		degree = SOFTWARE;
+		SoftwareStudent newSS = SoftwareStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray);
+		classRosterArray.push_back(newSS);
 	}
-	Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degree);
+	//Student newStudent(studentID, firstName, lastName, emailAddress, age, numOfdaysArray, degree);
 
-	classRosterArray.push_back(newStudent);
+	
 }
 
 void Roster::remove(string studentID) {

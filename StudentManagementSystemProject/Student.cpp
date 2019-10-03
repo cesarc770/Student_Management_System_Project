@@ -1,6 +1,6 @@
 #include "student.h"
 
-// Student::Student (int studentID, string firstName) {};
+Student::Student () {};
 
 Student::Student(string studentID, string firstName, string lastName, string email, int age, int NumOfDaysToCompleteCourse[], Degree degreeType)
 {

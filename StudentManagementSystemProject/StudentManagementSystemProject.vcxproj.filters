@@ -24,6 +24,9 @@
     <ClInclude Include="Degree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SoftwareStudent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Roster.cpp">
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftwareStudent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

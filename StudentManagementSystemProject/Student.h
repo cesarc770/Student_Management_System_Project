@@ -17,6 +17,7 @@ private:
 	Degree degreeType;
 
 public:
+	Student();
 	Student(string studentID, string firstName, string lastName, string email, int age, int NumOfDaysToCompleteCourse[3], Degree degreeType);
 	~Student();
 	string getID();
@@ -25,7 +26,7 @@ public:
 	string getEmail();
 	int getAge();
 	int * getNumOfDaysToCompleteCourse();
-	// virtual int getDegreeProgram ();
+	virtual int getDegreeProgram() { return this->degreeType; }
 	virtual void print();
 
 	void setID(int ID);

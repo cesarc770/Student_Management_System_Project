@@ -1,5 +1,6 @@
 #pragma once
 #include "Student.h"
+#include "SoftwareStudent.h"
 #include <vector>
 
 
